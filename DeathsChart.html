@@ -1,0 +1,87 @@
+<html>
+  <head>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      google.charts.load("current", {packages:["corechart"]});
+      google.charts.setOnLoadCallback(drawChart);
+      function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+           ['States', 'deceased' ],
+          ['Alabama', 216],
+          ['Alaska', 7],
+         ['Wyoming', 7],
+         ['South Dakota', 11],
+          ['Hawaii', 14],
+          ['Montana', 14],
+              ['North Dakota', 17],
+          ['West Virginia', 34],
+             ['Utah', 41],
+            ['Vermont', 46],
+            ['Arkansas', 50],
+            ['Maine', 50],
+            ['Idaho', 56],
+            ['Nebraska', 56],
+            ['New Hampshire', 60],
+            ['Oregon', 91],
+             ['New Mexico', 99],
+             ['Iowa', 118],
+          ['Kansas', 120],
+            ['Delaware', 120],
+            ['South Carolina', 174],
+            ['District of Columbia', 178],
+            ['Tennessee', 190],
+             ['Oklahoma', 195],
+            ['Nevada', 206],
+            ['Kentucky', 211],
+             ['Rhode Island', 226],
+            ['Mississippi', 227],
+            ['Minnesota', 272],
+             ['Wisconson', 274],
+            ['Arizona', 277],
+          ['Missouri', 282],
+            ['North Carolina', 309],
+            ['Virginia', 448],
+             ['Texas', 676],
+         ['Colorado', 678],
+            ['Ohio', 728],
+              ['Washington', 757],
+            ['Indiana', 813],
+            ['Maryland', 827],
+             ['Georgia', 907],
+             ['Florida', 1073],
+            ['Louisiana', 1670],
+            ['California', 1716],
+          ['Pennsylvania', 1871],
+          ['Connecticut', 1925],
+          ['Illinios', 1943],
+          ['Massasschusetts', 2899],
+          ['Michigan', 3314],
+          ['New Jersey', 5938],
+          ['New York', 16966],]);
+
+         
+
+        var options = {
+          title: 'COVID-19 Deaths; as of 4/26',
+          legend: { position: 'none' },
+          colors: ['orange'],
+         
+      histogram: {
+          bucketSize: 500,
+          maxNumBuckets: 50,
+          minValue: 5,
+          maxValue: 17000,
+           }, 
+    
+    
+ };
+
+        var chart = new google.visualization.Histogram(document.getElementById('chart_div'));
+        chart.draw(data, options);
+      }
+    </script>
+  </head>
+  <body>
+    <div id="chart_div" style="width: 1000px; height: 700px;"></div>
+  </body>
+</html>
